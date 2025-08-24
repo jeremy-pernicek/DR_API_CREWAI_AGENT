@@ -82,8 +82,20 @@ DR_API_CREWAI_AGENT/
 ### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/jeremy-pernicek/DR_API_CREWAI_AGENT.git
 cd DR_API_CREWAI_AGENT
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Or run the automated installer
+python3 install.py
+```
+
+**Note**: If you have issues with `faiss`, install `faiss-cpu` specifically:
+```bash
+pip install faiss-cpu
 ```
 
 ### Test the System

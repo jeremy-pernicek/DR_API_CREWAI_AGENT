@@ -84,7 +84,9 @@ revised_*.py
 output_*.txt
 debug_*.txt
 *.pkl
+!agent_crewai/data/indexes/**/*.pkl
 *.faiss
+!agent_crewai/data/indexes/**/*.faiss
 
 # API Keys & Secrets
 .env.local

@@ -1,0 +1,20 @@
+{
+  "total_files": 9,
+  "files_by_type": {
+    "python": 6,
+    "markdown": 3
+  },
+  "files_by_repo": {
+    "talk-to-my-data-agent": 7,
+    "guarded-rag-assistant": 1,
+    "forecast-assistant": 1
+  },
+  "top_tags": {
+    "datarobot": 4,
+    "openai": 2,
+    "streamlit": 1,
+    "deployment": 3,
+    "llm": 3
+  },
+  "scraped_at": 1755970153.010082
+}

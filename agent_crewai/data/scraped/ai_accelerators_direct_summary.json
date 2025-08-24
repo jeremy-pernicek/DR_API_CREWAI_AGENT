@@ -1,0 +1,61 @@
+{
+  "total_files": 45,
+  "files_by_section": {
+    "ecosystem_integration_templates": 43,
+    "generative_ai": 1,
+    "use_cases_and_horizontal_approaches": 1
+  },
+  "files_by_type": {
+    "notebook": 15,
+    "yaml": 15,
+    "markdown": 6,
+    "json": 2,
+    "text": 2,
+    "python": 5
+  },
+  "files_by_subsection": {
+    "ecosystem_integration_templates/AWS_Athena_template": 2,
+    "generative_ai/zero_shot_LMM_error_analysis_NLP": 1,
+    "use_cases_and_horizontal_approaches/FP&A": 1,
+    "ecosystem_integration_templates/AWS_S3_template": 2,
+    "ecosystem_integration_templates/AWS_monitor_sagemaker_model_in_DataRobot": 3,
+    "ecosystem_integration_templates/AWS_sagemaker_deployment": 3,
+    "ecosystem_integration_templates/Azure_template": 2,
+    "ecosystem_integration_templates/Custom Model End-to-End With Compliance Docs": 2,
+    "ecosystem_integration_templates/DataRobot-GraphQL": 2,
+    "ecosystem_integration_templates/Databricks & Datarobot - Large Scale Forecasting": 2,
+    "ecosystem_integration_templates/Databricks_template": 2,
+    "ecosystem_integration_templates/GCP_template": 2,
+    "ecosystem_integration_templates/root": 1,
+    "ecosystem_integration_templates/SAP_template": 2,
+    "ecosystem_integration_templates/Snowflake_snowpark_template": 2,
+    "ecosystem_integration_templates/Snowflake_template": 5,
+    "ecosystem_integration_templates/scoring-code-as-microservice-w_docker": 2,
+    "ecosystem_integration_templates/teams_datarobot": 9
+  },
+  "top_tags": {
+    "integration": 43,
+    "athena": 2,
+    "ai-accelerators": 45,
+    "aws": 10,
+    "predictions": 21,
+    "datarobot": 41,
+    "deployment": 24,
+    "ecosystem": 43,
+    "templates": 43,
+    "genai": 1,
+    "zero-shot": 1,
+    "generative-ai": 1,
+    "classification": 1,
+    "nlp": 1,
+    "openai": 6,
+    "llm": 1,
+    "analysis": 1,
+    "business-applications": 1,
+    "use-cases": 1,
+    "finance": 1,
+    "time-series": 4,
+    "planning": 1
+  },
+  "scraped_at": 1755970687.9411972
+}

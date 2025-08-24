@@ -1,0 +1,26 @@
+{
+  "total_files": 41,
+  "files_by_type": {
+    "notebook": 23,
+    "markdown": 5,
+    "python": 12,
+    "text": 1
+  },
+  "files_by_repo": {
+    "examples-for-data-scientists": 41
+  },
+  "top_tags": {
+    "evaluation": 8,
+    "datarobot-api": 6,
+    "datarobot": 4,
+    "predictions": 3,
+    "modeling": 3,
+    "classification": 2,
+    "api": 2,
+    "autopilot": 2,
+    "time-series": 2,
+    "regression": 1,
+    "deployment": 1
+  },
+  "scraped_at": 1755970063.613416
+}

@@ -1,0 +1,56 @@
+{
+  "total_items": 360,
+  "by_content_type": {
+    "template": 46,
+    "code": 267,
+    "documentation": 9,
+    "workflow": 38
+  },
+  "by_source_type": {
+    "readthedocs": 84,
+    "github_python": 23,
+    "github_notebook": 38,
+    "ai_accelerator": 45,
+    "openapi": 170
+  },
+  "by_use_case_category": {
+    "modeling": 84,
+    "time_series": 12,
+    "deployment": 4,
+    "general": 44,
+    "data_prep": 1,
+    "integration": 43,
+    "genai": 1,
+    "business_use_case": 1,
+    "api_integration": 170
+  },
+  "complexity_distribution": {
+    "simple": 23,
+    "intermediate": 209,
+    "advanced": 128
+  },
+  "top_tags": {
+    "api-reference": 233,
+    "openai-api": 170,
+    "code-example": 170,
+    "ai-accelerators": 65,
+    "datarobot": 64,
+    "example": 61,
+    "integration": 61,
+    "ecosystem": 61,
+    "templates": 61,
+    "api_reference": 48,
+    "ai-accelerator": 45,
+    "advanced": 43,
+    "deployment": 43,
+    "ecosystem_integration_templates": 43,
+    "tutorial": 42,
+    "jupyter-notebook": 38,
+    "predictions": 37,
+    "documentation": 34,
+    "openai": 14,
+    "aws": 14
+  },
+  "total_code_examples": 1008,
+  "total_api_methods": 2185
+}

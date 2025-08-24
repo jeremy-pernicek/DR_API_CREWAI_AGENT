@@ -1,0 +1,1022 @@
+[
+  {
+    "endpoint": "GET /assistants",
+    "summary": "List assistants",
+    "language": "python",
+    "code": "import requests\n\n# List assistants\n# Returns a list of assistants.\n\nurl = f'{base_url}/assistants'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /assistants",
+    "summary": "Create assistant",
+    "language": "python",
+    "code": "import requests\n\n# Create assistant\n# Create an assistant with a model and instructions.\n\nurl = f'{base_url}/assistants'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /assistants/{assistant_id}",
+    "summary": "Retrieve assistant",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve assistant\n# Retrieves an assistant.\n\nurl = f'{base_url}/assistants/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /assistants/{assistant_id}",
+    "summary": "Modify assistant",
+    "language": "python",
+    "code": "import requests\n\n# Modify assistant\n# Modifies an assistant.\n\nurl = f'{base_url}/assistants/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /assistants/{assistant_id}",
+    "summary": "Delete assistant",
+    "language": "python",
+    "code": "import requests\n\n# Delete assistant\n# Delete an assistant.\n\nurl = f'{base_url}/assistants/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /audio/speech",
+    "summary": "Create speech",
+    "language": "python",
+    "code": "import requests\n\n# Create speech\n# Generates audio from the input text.\n\nurl = f'{base_url}/audio/speech'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /audio/transcriptions",
+    "summary": "Create transcription",
+    "language": "python",
+    "code": "import requests\n\n# Create transcription\n# Transcribes audio into the input language.\n\nurl = f'{base_url}/audio/transcriptions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /audio/translations",
+    "summary": "Create translation",
+    "language": "python",
+    "code": "import requests\n\n# Create translation\n# Translates audio into English.\n\nurl = f'{base_url}/audio/translations'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /batches",
+    "summary": "Create batch",
+    "language": "python",
+    "code": "import requests\n\n# Create batch\n# Creates and executes a batch from an uploaded file of requests\n\nurl = f'{base_url}/batches'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /batches",
+    "summary": "List batch",
+    "language": "python",
+    "code": "import requests\n\n# List batch\n# List your organization's batches.\n\nurl = f'{base_url}/batches'\nparams = {\n    'after': None,\n    'limit': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /batches/{batch_id}",
+    "summary": "Retrieve batch",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve batch\n# Retrieves a batch.\n\nurl = f'{base_url}/batches/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /batches/{batch_id}/cancel",
+    "summary": "Cancel batch",
+    "language": "python",
+    "code": "import requests\n\n# Cancel batch\n# Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.\n\nurl = f'{base_url}/batches/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /chat/completions",
+    "summary": "List Chat Completions",
+    "language": "python",
+    "code": "import requests\n\n# List Chat Completions\n# List stored Chat Completions. Only Chat Completions that have been stored\nwith the `store` parameter set to `true` will be returned.\n\n\nurl = f'{base_url}/chat/completions'\nparams = {\n    'model': None,\n    'metadata': None,\n    'after': None,\n    'limit': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /chat/completions",
+    "summary": "Create chat completion",
+    "language": "python",
+    "code": "import requests\n\n# Create chat completion\n# **Starting a new project?** We recommend trying [Responses](https://platform.openai.com/docs/api-reference/responses) \nto take advantage of the latest OpenAI platform features. Compare\n[Chat Completions with Responses](https://platform.openai.com/docs/guides/responses-vs-chat-completions?api-mode=responses).\n\n---\n\nCreates a model response for the given chat conversation. Learn more in the\n[text generation](https://platform.openai.com/docs/guides/text-generation), [vision](https://platform.openai.com/docs/guides/vision),\nand [audio](https://platform.openai.com/docs/guides/audio) guides.\n\nParameter support can differ depending on the model used to generate the\nresponse, particularly for newer reasoning models. Parameters that are only\nsupported for reasoning models are noted below. For the current state of \nunsupported parameters in reasoning models, \n[refer to the reasoning guide](https://platform.openai.com/docs/guides/reasoning).\n\n\nurl = f'{base_url}/chat/completions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /chat/completions/{completion_id}",
+    "summary": "Get chat completion",
+    "language": "python",
+    "code": "import requests\n\n# Get chat completion\n# Get a stored chat completion. Only Chat Completions that have been created\nwith the `store` parameter set to `true` will be returned.\n\n\nurl = f'{base_url}/chat/completions/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /chat/completions/{completion_id}",
+    "summary": "Update chat completion",
+    "language": "python",
+    "code": "import requests\n\n# Update chat completion\n# Modify a stored chat completion. Only Chat Completions that have been\ncreated with the `store` parameter set to `true` can be modified. Currently,\nthe only supported modification is to update the `metadata` field.\n\n\nurl = f'{base_url}/chat/completions/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /chat/completions/{completion_id}",
+    "summary": "Delete chat completion",
+    "language": "python",
+    "code": "import requests\n\n# Delete chat completion\n# Delete a stored chat completion. Only Chat Completions that have been\ncreated with the `store` parameter set to `true` can be deleted.\n\n\nurl = f'{base_url}/chat/completions/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /chat/completions/{completion_id}/messages",
+    "summary": "Get chat messages",
+    "language": "python",
+    "code": "import requests\n\n# Get chat messages\n# Get the messages in a stored chat completion. Only Chat Completions that\nhave been created with the `store` parameter set to `true` will be\nreturned.\n\n\nurl = f'{base_url}/chat/completions/{None}/messages'\nparams = {\n    'after': None,\n    'limit': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /completions",
+    "summary": "Create completion",
+    "language": "python",
+    "code": "import requests\n\n# Create completion\n# Creates a completion for the provided prompt and parameters.\n\nurl = f'{base_url}/completions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /containers",
+    "summary": "List containers",
+    "language": "python",
+    "code": "import requests\n\n# List containers\n# List Containers\n\nurl = f'{base_url}/containers'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /containers",
+    "summary": "Create container",
+    "language": "python",
+    "code": "import requests\n\n# Create container\n# Create Container\n\nurl = f'{base_url}/containers'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /containers/{container_id}",
+    "summary": "Retrieve container",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve container\n# Retrieve Container\n\nurl = f'{base_url}/containers/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /containers/{container_id}",
+    "summary": "Delete a container",
+    "language": "python",
+    "code": "import requests\n\n# Delete a container\n# Delete Container\n\nurl = f'{base_url}/containers/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /containers/{container_id}/files",
+    "summary": "Create container file",
+    "language": "python",
+    "code": "import requests\n\n# Create container file\n# Create a Container File\n\nYou can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.\n\n\nurl = f'{base_url}/containers/{None}/files'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /containers/{container_id}/files",
+    "summary": "List container files",
+    "language": "python",
+    "code": "import requests\n\n# List container files\n# List Container files\n\nurl = f'{base_url}/containers/{None}/files'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /containers/{container_id}/files/{file_id}",
+    "summary": "Retrieve container file",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve container file\n# Retrieve Container File\n\nurl = f'{base_url}/containers/{None}/files/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /containers/{container_id}/files/{file_id}",
+    "summary": "Delete a container file",
+    "language": "python",
+    "code": "import requests\n\n# Delete a container file\n# Delete Container File\n\nurl = f'{base_url}/containers/{None}/files/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /containers/{container_id}/files/{file_id}/content",
+    "summary": "Retrieve container file content",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve container file content\n# Retrieve Container File Content\n\nurl = f'{base_url}/containers/{None}/files/{None}/content'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /conversations",
+    "summary": "Create a conversation",
+    "language": "python",
+    "code": "import requests\n\n# Create a conversation\n# Create a conversation with the given ID.\n\nurl = f'{base_url}/conversations'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /conversations/{conversation_id}",
+    "summary": "Retrieve a conversation",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve a conversation\n# Get a conversation with the given ID.\n\nurl = f'{base_url}/conversations/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /conversations/{conversation_id}",
+    "summary": "Update a conversation",
+    "language": "python",
+    "code": "import requests\n\n# Update a conversation\n# Update a conversation's metadata with the given ID.\n\nurl = f'{base_url}/conversations/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /conversations/{conversation_id}",
+    "summary": "Delete a conversation",
+    "language": "python",
+    "code": "import requests\n\n# Delete a conversation\n# Delete a conversation with the given ID.\n\nurl = f'{base_url}/conversations/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /conversations/{conversation_id}/items",
+    "summary": "Create items",
+    "language": "python",
+    "code": "import requests\n\n# Create items\n# Create items in a conversation with the given ID.\n\nurl = f'{base_url}/conversations/{None}/items'\nparams = {\n    'include': None\n}\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, params=params, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /conversations/{conversation_id}/items",
+    "summary": "List items",
+    "language": "python",
+    "code": "import requests\n\n# List items\n# List all items for a conversation with the given ID.\n\nurl = f'{base_url}/conversations/{None}/items'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'include': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /conversations/{conversation_id}/items/{item_id}",
+    "summary": "Retrieve an item",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve an item\n# Get a single item from a conversation with the given IDs.\n\nurl = f'{base_url}/conversations/{None}/items/{None}'\nparams = {\n    'include': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /conversations/{conversation_id}/items/{item_id}",
+    "summary": "Delete an item",
+    "language": "python",
+    "code": "import requests\n\n# Delete an item\n# Delete an item from a conversation with the given IDs.\n\nurl = f'{base_url}/conversations/{None}/items/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /embeddings",
+    "summary": "Create embeddings",
+    "language": "python",
+    "code": "import requests\n\n# Create embeddings\n# Creates an embedding vector representing the input text.\n\nurl = f'{base_url}/embeddings'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals",
+    "summary": "List evals",
+    "language": "python",
+    "code": "import requests\n\n# List evals\n# List evaluations for a project.\n\n\nurl = f'{base_url}/evals'\nparams = {\n    'after': None,\n    'limit': None,\n    'order': None,\n    'order_by': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /evals",
+    "summary": "Create eval",
+    "language": "python",
+    "code": "import requests\n\n# Create eval\n# Create the structure of an evaluation that can be used to test a model's performance.\nAn evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.\nFor more information, see the [Evals guide](https://platform.openai.com/docs/guides/evals).\n\n\nurl = f'{base_url}/evals'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals/{eval_id}",
+    "summary": "Get an eval",
+    "language": "python",
+    "code": "import requests\n\n# Get an eval\n# Get an evaluation by ID.\n\n\nurl = f'{base_url}/evals/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /evals/{eval_id}",
+    "summary": "Update an eval",
+    "language": "python",
+    "code": "import requests\n\n# Update an eval\n# Update certain properties of an evaluation.\n\n\nurl = f'{base_url}/evals/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /evals/{eval_id}",
+    "summary": "Delete an eval",
+    "language": "python",
+    "code": "import requests\n\n# Delete an eval\n# Delete an evaluation.\n\n\nurl = f'{base_url}/evals/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals/{eval_id}/runs",
+    "summary": "Get eval runs",
+    "language": "python",
+    "code": "import requests\n\n# Get eval runs\n# Get a list of runs for an evaluation.\n\n\nurl = f'{base_url}/evals/{None}/runs'\nparams = {\n    'after': None,\n    'limit': None,\n    'order': None,\n    'status': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /evals/{eval_id}/runs",
+    "summary": "Create eval run",
+    "language": "python",
+    "code": "import requests\n\n# Create eval run\n# Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.\n\n\nurl = f'{base_url}/evals/{None}/runs'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals/{eval_id}/runs/{run_id}",
+    "summary": "Get an eval run",
+    "language": "python",
+    "code": "import requests\n\n# Get an eval run\n# Get an evaluation run by ID.\n\n\nurl = f'{base_url}/evals/{None}/runs/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /evals/{eval_id}/runs/{run_id}",
+    "summary": "Cancel eval run",
+    "language": "python",
+    "code": "import requests\n\n# Cancel eval run\n# Cancel an ongoing evaluation run.\n\n\nurl = f'{base_url}/evals/{None}/runs/{None}'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /evals/{eval_id}/runs/{run_id}",
+    "summary": "Delete eval run",
+    "language": "python",
+    "code": "import requests\n\n# Delete eval run\n# Delete an eval run.\n\n\nurl = f'{base_url}/evals/{None}/runs/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals/{eval_id}/runs/{run_id}/output_items",
+    "summary": "Get eval run output items",
+    "language": "python",
+    "code": "import requests\n\n# Get eval run output items\n# Get a list of output items for an evaluation run.\n\n\nurl = f'{base_url}/evals/{None}/runs/{None}/output_items'\nparams = {\n    'after': None,\n    'limit': None,\n    'status': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /evals/{eval_id}/runs/{run_id}/output_items/{output_item_id}",
+    "summary": "Get an output item of an eval run",
+    "language": "python",
+    "code": "import requests\n\n# Get an output item of an eval run\n# Get an evaluation run output item by ID.\n\n\nurl = f'{base_url}/evals/{None}/runs/{None}/output_items/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /files",
+    "summary": "List files",
+    "language": "python",
+    "code": "import requests\n\n# List files\n# Returns a list of files.\n\nurl = f'{base_url}/files'\nparams = {\n    'purpose': None,\n    'limit': None,\n    'order': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /files",
+    "summary": "Upload file",
+    "language": "python",
+    "code": "import requests\n\n# Upload file\n# Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 1 TB.\n\nThe Assistants API supports files up to 2 million tokens and of specific file types. See the [Assistants Tools guide](https://platform.openai.com/docs/assistants/tools) for details.\n\nThe Fine-tuning API only supports `.jsonl` files. The input also has certain required formats for fine-tuning [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input) or [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) models.\n\nThe Batch API only supports `.jsonl` files up to 200 MB in size. The input also has a specific required [format](https://platform.openai.com/docs/api-reference/batch/request-input).\n\nPlease [contact us](https://help.openai.com/) if you need to increase these storage limits.\n\n\nurl = f'{base_url}/files'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /files/{file_id}",
+    "summary": "Delete file",
+    "language": "python",
+    "code": "import requests\n\n# Delete file\n# Delete a file.\n\nurl = f'{base_url}/files/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /files/{file_id}",
+    "summary": "Retrieve file",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve file\n# Returns information about a specific file.\n\nurl = f'{base_url}/files/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /files/{file_id}/content",
+    "summary": "Retrieve file content",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve file content\n# Returns the contents of the specified file.\n\nurl = f'{base_url}/files/{None}/content'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/alpha/graders/run",
+    "summary": "Run grader",
+    "language": "python",
+    "code": "import requests\n\n# Run grader\n# Run a grader.\n\n\nurl = f'{base_url}/fine_tuning/alpha/graders/run'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/alpha/graders/validate",
+    "summary": "Validate grader",
+    "language": "python",
+    "code": "import requests\n\n# Validate grader\n# Validate a grader.\n\n\nurl = f'{base_url}/fine_tuning/alpha/graders/validate'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions",
+    "summary": "List checkpoint permissions",
+    "language": "python",
+    "code": "import requests\n\n# List checkpoint permissions\n# **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).\n\nOrganization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.\n\n\nurl = f'{base_url}/fine_tuning/checkpoints/{None}/permissions'\nparams = {\n    'project_id': None,\n    'after': None,\n    'limit': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions",
+    "summary": "Create checkpoint permissions",
+    "language": "python",
+    "code": "import requests\n\n# Create checkpoint permissions\n# **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).\n\nThis enables organization owners to share fine-tuned models with other projects in their organization.\n\n\nurl = f'{base_url}/fine_tuning/checkpoints/{None}/permissions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions/{permission_id}",
+    "summary": "Delete checkpoint permission",
+    "language": "python",
+    "code": "import requests\n\n# Delete checkpoint permission\n# **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).\n\nOrganization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.\n\n\nurl = f'{base_url}/fine_tuning/checkpoints/{None}/permissions/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/jobs",
+    "summary": "Create fine-tuning job",
+    "language": "python",
+    "code": "import requests\n\n# Create fine-tuning job\n# Creates a fine-tuning job which begins the process of creating a new model from a given dataset.\n\nResponse includes details of the enqueued job including job status and the name of the fine-tuned models once complete.\n\n[Learn more about fine-tuning](https://platform.openai.com/docs/guides/model-optimization)\n\n\nurl = f'{base_url}/fine_tuning/jobs'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /fine_tuning/jobs",
+    "summary": "List fine-tuning jobs",
+    "language": "python",
+    "code": "import requests\n\n# List fine-tuning jobs\n# List your organization's fine-tuning jobs\n\n\nurl = f'{base_url}/fine_tuning/jobs'\nparams = {\n    'after': None,\n    'limit': None,\n    'metadata': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /fine_tuning/jobs/{fine_tuning_job_id}",
+    "summary": "Retrieve fine-tuning job",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve fine-tuning job\n# Get info about a fine-tuning job.\n\n[Learn more about fine-tuning](https://platform.openai.com/docs/guides/model-optimization)\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel",
+    "summary": "Cancel fine-tuning",
+    "language": "python",
+    "code": "import requests\n\n# Cancel fine-tuning\n# Immediately cancel a fine-tune job.\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints",
+    "summary": "List fine-tuning checkpoints",
+    "language": "python",
+    "code": "import requests\n\n# List fine-tuning checkpoints\n# List checkpoints for a fine-tuning job.\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}/checkpoints'\nparams = {\n    'after': None,\n    'limit': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /fine_tuning/jobs/{fine_tuning_job_id}/events",
+    "summary": "List fine-tuning events",
+    "language": "python",
+    "code": "import requests\n\n# List fine-tuning events\n# Get status updates for a fine-tuning job.\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}/events'\nparams = {\n    'after': None,\n    'limit': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/jobs/{fine_tuning_job_id}/pause",
+    "summary": "Pause fine-tuning",
+    "language": "python",
+    "code": "import requests\n\n# Pause fine-tuning\n# Pause a fine-tune job.\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}/pause'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /fine_tuning/jobs/{fine_tuning_job_id}/resume",
+    "summary": "Resume fine-tuning",
+    "language": "python",
+    "code": "import requests\n\n# Resume fine-tuning\n# Resume a fine-tune job.\n\n\nurl = f'{base_url}/fine_tuning/jobs/{None}/resume'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /images/edits",
+    "summary": "Create image edit",
+    "language": "python",
+    "code": "import requests\n\n# Create image edit\n# Creates an edited or extended image given one or more source images and a prompt. This endpoint only supports `gpt-image-1` and `dall-e-2`.\n\nurl = f'{base_url}/images/edits'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /images/generations",
+    "summary": "Create image",
+    "language": "python",
+    "code": "import requests\n\n# Create image\n# Creates an image given a prompt. [Learn more](https://platform.openai.com/docs/guides/images).\n\n\nurl = f'{base_url}/images/generations'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /images/variations",
+    "summary": "Create image variation",
+    "language": "python",
+    "code": "import requests\n\n# Create image variation\n# Creates a variation of a given image. This endpoint only supports `dall-e-2`.\n\nurl = f'{base_url}/images/variations'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /models",
+    "summary": "List models",
+    "language": "python",
+    "code": "import requests\n\n# List models\n# Lists the currently available models, and provides basic information about each one such as the owner and availability.\n\nurl = f'{base_url}/models'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /models/{model}",
+    "summary": "Retrieve model",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve model\n# Retrieves a model instance, providing basic information about the model such as the owner and permissioning.\n\nurl = f'{base_url}/models/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /models/{model}",
+    "summary": "Delete a fine-tuned model",
+    "language": "python",
+    "code": "import requests\n\n# Delete a fine-tuned model\n# Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.\n\nurl = f'{base_url}/models/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /moderations",
+    "summary": "Create moderation",
+    "language": "python",
+    "code": "import requests\n\n# Create moderation\n# Classifies if text and/or image inputs are potentially harmful. Learn\nmore in the [moderation guide](https://platform.openai.com/docs/guides/moderation).\n\n\nurl = f'{base_url}/moderations'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/admin_api_keys",
+    "summary": "List all organization and project API keys.",
+    "language": "python",
+    "code": "import requests\n\n# List all organization and project API keys.\n# List organization API keys\n\nurl = f'{base_url}/organization/admin_api_keys'\nparams = {\n    'after': None,\n    'order': None,\n    'limit': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/admin_api_keys",
+    "summary": "Create admin API key",
+    "language": "python",
+    "code": "import requests\n\n# Create admin API key\n# Create an organization admin API key\n\nurl = f'{base_url}/organization/admin_api_keys'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/admin_api_keys/{key_id}",
+    "summary": "Retrieve admin API key",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve admin API key\n# Retrieve a single organization API key\n\nurl = f'{base_url}/organization/admin_api_keys/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/admin_api_keys/{key_id}",
+    "summary": "Delete admin API key",
+    "language": "python",
+    "code": "import requests\n\n# Delete admin API key\n# Delete an organization admin API key\n\nurl = f'{base_url}/organization/admin_api_keys/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/audit_logs",
+    "summary": "List audit logs",
+    "language": "python",
+    "code": "import requests\n\n# List audit logs\n# List user actions and configuration changes within this organization.\n\nurl = f'{base_url}/organization/audit_logs'\nparams = {\n    'effective_at': None,\n    'project_ids[]': None,\n    'event_types[]': None,\n    'actor_ids[]': None,\n    'actor_emails[]': None,\n    'resource_ids[]': None,\n    'limit': None,\n    'after': None,\n    'before': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/certificates",
+    "summary": "List organization certificates",
+    "language": "python",
+    "code": "import requests\n\n# List organization certificates\n# List uploaded certificates for this organization.\n\nurl = f'{base_url}/organization/certificates'\nparams = {\n    'limit': None,\n    'after': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/certificates",
+    "summary": "Upload certificate",
+    "language": "python",
+    "code": "import requests\n\n# Upload certificate\n# Upload a certificate to the organization. This does **not** automatically activate the certificate.\n\nOrganizations can upload up to 50 certificates.\n\n\nurl = f'{base_url}/organization/certificates'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/certificates/activate",
+    "summary": "Activate certificates for organization",
+    "language": "python",
+    "code": "import requests\n\n# Activate certificates for organization\n# Activate certificates at the organization level.\n\nYou can atomically and idempotently activate up to 10 certificates at a time.\n\n\nurl = f'{base_url}/organization/certificates/activate'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/certificates/deactivate",
+    "summary": "Deactivate certificates for organization",
+    "language": "python",
+    "code": "import requests\n\n# Deactivate certificates for organization\n# Deactivate certificates at the organization level.\n\nYou can atomically and idempotently deactivate up to 10 certificates at a time.\n\n\nurl = f'{base_url}/organization/certificates/deactivate'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/certificates/{certificate_id}",
+    "summary": "Get certificate",
+    "language": "python",
+    "code": "import requests\n\n# Get certificate\n# Get a certificate that has been uploaded to the organization.\n\nYou can get a certificate regardless of whether it is active or not.\n\n\nurl = f'{base_url}/organization/certificates/{None}'\nparams = {\n    'include': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/certificates/{certificate_id}",
+    "summary": "Modify certificate",
+    "language": "python",
+    "code": "import requests\n\n# Modify certificate\n# Modify a certificate. Note that only the name can be modified.\n\n\nurl = f'{base_url}/organization/certificates/{certificate_id}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/certificates/{certificate_id}",
+    "summary": "Delete certificate",
+    "language": "python",
+    "code": "import requests\n\n# Delete certificate\n# Delete a certificate from the organization.\n\nThe certificate must be inactive for the organization and all projects.\n\n\nurl = f'{base_url}/organization/certificates/{certificate_id}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/costs",
+    "summary": "Costs",
+    "language": "python",
+    "code": "import requests\n\n# Costs\n# Get costs details for the organization.\n\nurl = f'{base_url}/organization/costs'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/invites",
+    "summary": "List invites",
+    "language": "python",
+    "code": "import requests\n\n# List invites\n# Returns a list of invites in the organization.\n\nurl = f'{base_url}/organization/invites'\nparams = {\n    'limit': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/invites",
+    "summary": "Create invite",
+    "language": "python",
+    "code": "import requests\n\n# Create invite\n# Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.\n\nurl = f'{base_url}/organization/invites'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/invites/{invite_id}",
+    "summary": "Retrieve invite",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve invite\n# Retrieves an invite.\n\nurl = f'{base_url}/organization/invites/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/invites/{invite_id}",
+    "summary": "Delete invite",
+    "language": "python",
+    "code": "import requests\n\n# Delete invite\n# Delete an invite. If the invite has already been accepted, it cannot be deleted.\n\nurl = f'{base_url}/organization/invites/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects",
+    "summary": "List projects",
+    "language": "python",
+    "code": "import requests\n\n# List projects\n# Returns a list of projects.\n\nurl = f'{base_url}/organization/projects'\nparams = {\n    'limit': None,\n    'after': None,\n    'include_archived': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects",
+    "summary": "Create project",
+    "language": "python",
+    "code": "import requests\n\n# Create project\n# Create a new project in the organization. Projects can be created and archived, but cannot be deleted.\n\nurl = f'{base_url}/organization/projects'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}",
+    "summary": "Retrieve project",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve project\n# Retrieves a project.\n\nurl = f'{base_url}/organization/projects/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}",
+    "summary": "Modify project",
+    "language": "python",
+    "code": "import requests\n\n# Modify project\n# Modifies a project in the organization.\n\nurl = f'{base_url}/organization/projects/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/api_keys",
+    "summary": "List project API keys",
+    "language": "python",
+    "code": "import requests\n\n# List project API keys\n# Returns a list of API keys in the project.\n\nurl = f'{base_url}/organization/projects/{None}/api_keys'\nparams = {\n    'limit': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/api_keys/{key_id}",
+    "summary": "Retrieve project API key",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve project API key\n# Retrieves an API key in the project.\n\nurl = f'{base_url}/organization/projects/{None}/api_keys/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/projects/{project_id}/api_keys/{key_id}",
+    "summary": "Delete project API key",
+    "language": "python",
+    "code": "import requests\n\n# Delete project API key\n# Deletes an API key from the project.\n\nurl = f'{base_url}/organization/projects/{None}/api_keys/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/archive",
+    "summary": "Archive project",
+    "language": "python",
+    "code": "import requests\n\n# Archive project\n# Archives a project in the organization. Archived projects cannot be used or updated.\n\nurl = f'{base_url}/organization/projects/{None}/archive'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/certificates",
+    "summary": "List project certificates",
+    "language": "python",
+    "code": "import requests\n\n# List project certificates\n# List certificates for this project.\n\nurl = f'{base_url}/organization/projects/{None}/certificates'\nparams = {\n    'limit': None,\n    'after': None,\n    'order': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/certificates/activate",
+    "summary": "Activate certificates for project",
+    "language": "python",
+    "code": "import requests\n\n# Activate certificates for project\n# Activate certificates at the project level.\n\nYou can atomically and idempotently activate up to 10 certificates at a time.\n\n\nurl = f'{base_url}/organization/projects/{None}/certificates/activate'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/certificates/deactivate",
+    "summary": "Deactivate certificates for project",
+    "language": "python",
+    "code": "import requests\n\n# Deactivate certificates for project\n# Deactivate certificates at the project level. You can atomically and \nidempotently deactivate up to 10 certificates at a time.\n\n\nurl = f'{base_url}/organization/projects/{None}/certificates/deactivate'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/rate_limits",
+    "summary": "List project rate limits",
+    "language": "python",
+    "code": "import requests\n\n# List project rate limits\n# Returns the rate limits per model for a project.\n\nurl = f'{base_url}/organization/projects/{None}/rate_limits'\nparams = {\n    'limit': None,\n    'after': None,\n    'before': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}",
+    "summary": "Modify project rate limit",
+    "language": "python",
+    "code": "import requests\n\n# Modify project rate limit\n# Updates a project rate limit.\n\nurl = f'{base_url}/organization/projects/{None}/rate_limits/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/service_accounts",
+    "summary": "List project service accounts",
+    "language": "python",
+    "code": "import requests\n\n# List project service accounts\n# Returns a list of service accounts in the project.\n\nurl = f'{base_url}/organization/projects/{None}/service_accounts'\nparams = {\n    'limit': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/service_accounts",
+    "summary": "Create project service account",
+    "language": "python",
+    "code": "import requests\n\n# Create project service account\n# Creates a new service account in the project. This also returns an unredacted API key for the service account.\n\nurl = f'{base_url}/organization/projects/{None}/service_accounts'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/service_accounts/{service_account_id}",
+    "summary": "Retrieve project service account",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve project service account\n# Retrieves a service account in the project.\n\nurl = f'{base_url}/organization/projects/{None}/service_accounts/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}",
+    "summary": "Delete project service account",
+    "language": "python",
+    "code": "import requests\n\n# Delete project service account\n# Deletes a service account from the project.\n\nurl = f'{base_url}/organization/projects/{None}/service_accounts/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/users",
+    "summary": "List project users",
+    "language": "python",
+    "code": "import requests\n\n# List project users\n# Returns a list of users in the project.\n\nurl = f'{base_url}/organization/projects/{None}/users'\nparams = {\n    'limit': None,\n    'after': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/users",
+    "summary": "Create project user",
+    "language": "python",
+    "code": "import requests\n\n# Create project user\n# Adds a user to the project. Users must already be members of the organization to be added to a project.\n\nurl = f'{base_url}/organization/projects/{None}/users'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/projects/{project_id}/users/{user_id}",
+    "summary": "Retrieve project user",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve project user\n# Retrieves a user in the project.\n\nurl = f'{base_url}/organization/projects/{None}/users/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/projects/{project_id}/users/{user_id}",
+    "summary": "Modify project user",
+    "language": "python",
+    "code": "import requests\n\n# Modify project user\n# Modifies a user's role in the project.\n\nurl = f'{base_url}/organization/projects/{None}/users/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/projects/{project_id}/users/{user_id}",
+    "summary": "Delete project user",
+    "language": "python",
+    "code": "import requests\n\n# Delete project user\n# Deletes a user from the project.\n\nurl = f'{base_url}/organization/projects/{None}/users/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/audio_speeches",
+    "summary": "Audio speeches",
+    "language": "python",
+    "code": "import requests\n\n# Audio speeches\n# Get audio speeches usage details for the organization.\n\nurl = f'{base_url}/organization/usage/audio_speeches'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/audio_transcriptions",
+    "summary": "Audio transcriptions",
+    "language": "python",
+    "code": "import requests\n\n# Audio transcriptions\n# Get audio transcriptions usage details for the organization.\n\nurl = f'{base_url}/organization/usage/audio_transcriptions'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/code_interpreter_sessions",
+    "summary": "Code interpreter sessions",
+    "language": "python",
+    "code": "import requests\n\n# Code interpreter sessions\n# Get code interpreter sessions usage details for the organization.\n\nurl = f'{base_url}/organization/usage/code_interpreter_sessions'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/completions",
+    "summary": "Completions",
+    "language": "python",
+    "code": "import requests\n\n# Completions\n# Get completions usage details for the organization.\n\nurl = f'{base_url}/organization/usage/completions'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'batch': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/embeddings",
+    "summary": "Embeddings",
+    "language": "python",
+    "code": "import requests\n\n# Embeddings\n# Get embeddings usage details for the organization.\n\nurl = f'{base_url}/organization/usage/embeddings'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/images",
+    "summary": "Images",
+    "language": "python",
+    "code": "import requests\n\n# Images\n# Get images usage details for the organization.\n\nurl = f'{base_url}/organization/usage/images'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'sources': None,\n    'sizes': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/moderations",
+    "summary": "Moderations",
+    "language": "python",
+    "code": "import requests\n\n# Moderations\n# Get moderations usage details for the organization.\n\nurl = f'{base_url}/organization/usage/moderations'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'user_ids': None,\n    'api_key_ids': None,\n    'models': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/usage/vector_stores",
+    "summary": "Vector stores",
+    "language": "python",
+    "code": "import requests\n\n# Vector stores\n# Get vector stores usage details for the organization.\n\nurl = f'{base_url}/organization/usage/vector_stores'\nparams = {\n    'start_time': None,\n    'end_time': None,\n    'bucket_width': None,\n    'project_ids': None,\n    'group_by': None,\n    'limit': None,\n    'page': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/users",
+    "summary": "List users",
+    "language": "python",
+    "code": "import requests\n\n# List users\n# Lists all of the users in the organization.\n\nurl = f'{base_url}/organization/users'\nparams = {\n    'limit': None,\n    'after': None,\n    'emails': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /organization/users/{user_id}",
+    "summary": "Retrieve user",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve user\n# Retrieves a user by their identifier.\n\nurl = f'{base_url}/organization/users/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /organization/users/{user_id}",
+    "summary": "Modify user",
+    "language": "python",
+    "code": "import requests\n\n# Modify user\n# Modifies a user's role in the organization.\n\nurl = f'{base_url}/organization/users/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /organization/users/{user_id}",
+    "summary": "Delete user",
+    "language": "python",
+    "code": "import requests\n\n# Delete user\n# Deletes a user from the organization.\n\nurl = f'{base_url}/organization/users/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /realtime/sessions",
+    "summary": "Create session",
+    "language": "python",
+    "code": "import requests\n\n# Create session\n# Create an ephemeral API token for use in client-side applications with the\nRealtime API. Can be configured with the same session parameters as the\n`session.update` client event.\n\nIt responds with a session object, plus a `client_secret` key which contains\na usable ephemeral API token that can be used to authenticate browser clients\nfor the Realtime API.\n\n\nurl = f'{base_url}/realtime/sessions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /realtime/transcription_sessions",
+    "summary": "Create transcription session",
+    "language": "python",
+    "code": "import requests\n\n# Create transcription session\n# Create an ephemeral API token for use in client-side applications with the\nRealtime API specifically for realtime transcriptions. \nCan be configured with the same session parameters as the `transcription_session.update` client event.\n\nIt responds with a session object, plus a `client_secret` key which contains\na usable ephemeral API token that can be used to authenticate browser clients\nfor the Realtime API.\n\n\nurl = f'{base_url}/realtime/transcription_sessions'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /responses",
+    "summary": "Create a model response",
+    "language": "python",
+    "code": "import requests\n\n# Create a model response\n# Creates a model response. Provide [text](https://platform.openai.com/docs/guides/text) or\n[image](https://platform.openai.com/docs/guides/images) inputs to generate [text](https://platform.openai.com/docs/guides/text)\nor [JSON](https://platform.openai.com/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](https://platform.openai.com/docs/guides/function-calling) or use built-in\n[tools](https://platform.openai.com/docs/guides/tools) like [web search](https://platform.openai.com/docs/guides/tools-web-search)\nor [file search](https://platform.openai.com/docs/guides/tools-file-search) to use your own data\nas input for the model's response.\n\n\nurl = f'{base_url}/responses'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /responses/{response_id}",
+    "summary": "Get a model response",
+    "language": "python",
+    "code": "import requests\n\n# Get a model response\n# Retrieves a model response with the given ID.\n\n\nurl = f'{base_url}/responses/{None}'\nparams = {\n    'include': None,\n    'stream': None,\n    'starting_after': None,\n    'include_obfuscation': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /responses/{response_id}",
+    "summary": "Delete a model response",
+    "language": "python",
+    "code": "import requests\n\n# Delete a model response\n# Deletes a model response with the given ID.\n\n\nurl = f'{base_url}/responses/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /responses/{response_id}/cancel",
+    "summary": "Cancel a response",
+    "language": "python",
+    "code": "import requests\n\n# Cancel a response\n# Cancels a model response with the given ID. Only responses created with\nthe `background` parameter set to `true` can be cancelled. \n[Learn more](https://platform.openai.com/docs/guides/background).\n\n\nurl = f'{base_url}/responses/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /responses/{response_id}/input_items",
+    "summary": "List input items",
+    "language": "python",
+    "code": "import requests\n\n# List input items\n# Returns a list of input items for a given response.\n\nurl = f'{base_url}/responses/{None}/input_items'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'include': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads",
+    "summary": "Create thread",
+    "language": "python",
+    "code": "import requests\n\n# Create thread\n# Create a thread.\n\nurl = f'{base_url}/threads'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/runs",
+    "summary": "Create thread and run",
+    "language": "python",
+    "code": "import requests\n\n# Create thread and run\n# Create a thread and run it in one request.\n\nurl = f'{base_url}/threads/runs'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}",
+    "summary": "Retrieve thread",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve thread\n# Retrieves a thread.\n\nurl = f'{base_url}/threads/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}",
+    "summary": "Modify thread",
+    "language": "python",
+    "code": "import requests\n\n# Modify thread\n# Modifies a thread.\n\nurl = f'{base_url}/threads/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /threads/{thread_id}",
+    "summary": "Delete thread",
+    "language": "python",
+    "code": "import requests\n\n# Delete thread\n# Delete a thread.\n\nurl = f'{base_url}/threads/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/messages",
+    "summary": "List messages",
+    "language": "python",
+    "code": "import requests\n\n# List messages\n# Returns a list of messages for a given thread.\n\nurl = f'{base_url}/threads/{None}/messages'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None,\n    'run_id': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/messages",
+    "summary": "Create message",
+    "language": "python",
+    "code": "import requests\n\n# Create message\n# Create a message.\n\nurl = f'{base_url}/threads/{None}/messages'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/messages/{message_id}",
+    "summary": "Retrieve message",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve message\n# Retrieve a message.\n\nurl = f'{base_url}/threads/{None}/messages/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/messages/{message_id}",
+    "summary": "Modify message",
+    "language": "python",
+    "code": "import requests\n\n# Modify message\n# Modifies a message.\n\nurl = f'{base_url}/threads/{None}/messages/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /threads/{thread_id}/messages/{message_id}",
+    "summary": "Delete message",
+    "language": "python",
+    "code": "import requests\n\n# Delete message\n# Deletes a message.\n\nurl = f'{base_url}/threads/{None}/messages/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/runs",
+    "summary": "List runs",
+    "language": "python",
+    "code": "import requests\n\n# List runs\n# Returns a list of runs belonging to a thread.\n\nurl = f'{base_url}/threads/{None}/runs'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/runs",
+    "summary": "Create run",
+    "language": "python",
+    "code": "import requests\n\n# Create run\n# Create a run.\n\nurl = f'{base_url}/threads/{None}/runs'\nparams = {\n    'include[]': None\n}\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, params=params, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/runs/{run_id}",
+    "summary": "Retrieve run",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve run\n# Retrieves a run.\n\nurl = f'{base_url}/threads/{None}/runs/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/runs/{run_id}",
+    "summary": "Modify run",
+    "language": "python",
+    "code": "import requests\n\n# Modify run\n# Modifies a run.\n\nurl = f'{base_url}/threads/{None}/runs/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/runs/{run_id}/cancel",
+    "summary": "Cancel a run",
+    "language": "python",
+    "code": "import requests\n\n# Cancel a run\n# Cancels a run that is `in_progress`.\n\nurl = f'{base_url}/threads/{None}/runs/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/runs/{run_id}/steps",
+    "summary": "List run steps",
+    "language": "python",
+    "code": "import requests\n\n# List run steps\n# Returns a list of run steps belonging to a run.\n\nurl = f'{base_url}/threads/{None}/runs/{None}/steps'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None,\n    'include[]': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /threads/{thread_id}/runs/{run_id}/steps/{step_id}",
+    "summary": "Retrieve run step",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve run step\n# Retrieves a run step.\n\nurl = f'{base_url}/threads/{None}/runs/{None}/steps/{None}'\nparams = {\n    'include[]': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /threads/{thread_id}/runs/{run_id}/submit_tool_outputs",
+    "summary": "Submit tool outputs to run",
+    "language": "python",
+    "code": "import requests\n\n# Submit tool outputs to run\n# When a run has the `status: \"requires_action\"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.\n\n\nurl = f'{base_url}/threads/{None}/runs/{None}/submit_tool_outputs'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /uploads",
+    "summary": "Create upload",
+    "language": "python",
+    "code": "import requests\n\n# Create upload\n# Creates an intermediate [Upload](https://platform.openai.com/docs/api-reference/uploads/object) object\nthat you can add [Parts](https://platform.openai.com/docs/api-reference/uploads/part-object) to.\nCurrently, an Upload can accept at most 8 GB in total and expires after an\nhour after you create it.\n\nOnce you complete the Upload, we will create a\n[File](https://platform.openai.com/docs/api-reference/files/object) object that contains all the parts\nyou uploaded. This File is usable in the rest of our platform as a regular\nFile object.\n\nFor certain `purpose` values, the correct `mime_type` must be specified. \nPlease refer to documentation for the \n[supported MIME types for your use case](https://platform.openai.com/docs/assistants/tools/file-search#supported-files).\n\nFor guidance on the proper filename extensions for each purpose, please\nfollow the documentation on [creating a\nFile](https://platform.openai.com/docs/api-reference/files/create).\n\n\nurl = f'{base_url}/uploads'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /uploads/{upload_id}/cancel",
+    "summary": "Cancel upload",
+    "language": "python",
+    "code": "import requests\n\n# Cancel upload\n# Cancels the Upload. No Parts may be added after an Upload is cancelled.\n\n\nurl = f'{base_url}/uploads/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /uploads/{upload_id}/complete",
+    "summary": "Complete upload",
+    "language": "python",
+    "code": "import requests\n\n# Complete upload\n# Completes the [Upload](https://platform.openai.com/docs/api-reference/uploads/object). \n\nWithin the returned Upload object, there is a nested [File](https://platform.openai.com/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n\n\nurl = f'{base_url}/uploads/{None}/complete'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /uploads/{upload_id}/parts",
+    "summary": "Add upload part",
+    "language": "python",
+    "code": "import requests\n\n# Add upload part\n# Adds a [Part](https://platform.openai.com/docs/api-reference/uploads/part-object) to an [Upload](https://platform.openai.com/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. \n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](https://platform.openai.com/docs/api-reference/uploads/complete).\n\n\nurl = f'{base_url}/uploads/{None}/parts'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores",
+    "summary": "List vector stores",
+    "language": "python",
+    "code": "import requests\n\n# List vector stores\n# Returns a list of vector stores.\n\nurl = f'{base_url}/vector_stores'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores",
+    "summary": "Create vector store",
+    "language": "python",
+    "code": "import requests\n\n# Create vector store\n# Create a vector store.\n\nurl = f'{base_url}/vector_stores'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}",
+    "summary": "Retrieve vector store",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve vector store\n# Retrieves a vector store.\n\nurl = f'{base_url}/vector_stores/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}",
+    "summary": "Modify vector store",
+    "language": "python",
+    "code": "import requests\n\n# Modify vector store\n# Modifies a vector store.\n\nurl = f'{base_url}/vector_stores/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /vector_stores/{vector_store_id}",
+    "summary": "Delete vector store",
+    "language": "python",
+    "code": "import requests\n\n# Delete vector store\n# Delete a vector store.\n\nurl = f'{base_url}/vector_stores/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}/file_batches",
+    "summary": "Create vector store file batch",
+    "language": "python",
+    "code": "import requests\n\n# Create vector store file batch\n# Create a vector store file batch.\n\nurl = f'{base_url}/vector_stores/{None}/file_batches'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}/file_batches/{batch_id}",
+    "summary": "Retrieve vector store file batch",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve vector store file batch\n# Retrieves a vector store file batch.\n\nurl = f'{base_url}/vector_stores/{None}/file_batches/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel",
+    "summary": "Cancel vector store file batch",
+    "language": "python",
+    "code": "import requests\n\n# Cancel vector store file batch\n# Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.\n\nurl = f'{base_url}/vector_stores/{None}/file_batches/{None}/cancel'\n\nresponse = requests.post(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files",
+    "summary": "List vector store files in a batch",
+    "language": "python",
+    "code": "import requests\n\n# List vector store files in a batch\n# Returns a list of vector store files in a batch.\n\nurl = f'{base_url}/vector_stores/{None}/file_batches/{None}/files'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None,\n    'filter': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}/files",
+    "summary": "List vector store files",
+    "language": "python",
+    "code": "import requests\n\n# List vector store files\n# Returns a list of vector store files.\n\nurl = f'{base_url}/vector_stores/{None}/files'\nparams = {\n    'limit': None,\n    'order': None,\n    'after': None,\n    'before': None,\n    'filter': None\n}\n\nresponse = requests.get(url, params=params)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}/files",
+    "summary": "Create vector store file",
+    "language": "python",
+    "code": "import requests\n\n# Create vector store file\n# Create a vector store file by attaching a [File](https://platform.openai.com/docs/api-reference/files) to a [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object).\n\nurl = f'{base_url}/vector_stores/{None}/files'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}/files/{file_id}",
+    "summary": "Retrieve vector store file",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve vector store file\n# Retrieves a vector store file.\n\nurl = f'{base_url}/vector_stores/{None}/files/{None}'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "DELETE /vector_stores/{vector_store_id}/files/{file_id}",
+    "summary": "Delete vector store file",
+    "language": "python",
+    "code": "import requests\n\n# Delete vector store file\n# Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](https://platform.openai.com/docs/api-reference/files/delete) endpoint.\n\nurl = f'{base_url}/vector_stores/{None}/files/{None}'\n\nresponse = requests.delete(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}/files/{file_id}",
+    "summary": "Update vector store file attributes",
+    "language": "python",
+    "code": "import requests\n\n# Update vector store file attributes\n# Update attributes on a vector store file.\n\nurl = f'{base_url}/vector_stores/{None}/files/{None}'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "GET /vector_stores/{vector_store_id}/files/{file_id}/content",
+    "summary": "Retrieve vector store file content",
+    "language": "python",
+    "code": "import requests\n\n# Retrieve vector store file content\n# Retrieve the parsed contents of a vector store file.\n\nurl = f'{base_url}/vector_stores/{None}/files/{None}/content'\n\nresponse = requests.get(url)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  },
+  {
+    "endpoint": "POST /vector_stores/{vector_store_id}/search",
+    "summary": "Search vector store",
+    "language": "python",
+    "code": "import requests\n\n# Search vector store\n# Search a vector store for relevant chunks based on a query and file attributes filter.\n\nurl = f'{base_url}/vector_stores/{None}/search'\ndata = {\n    # Add your request data here\n    # Based on the API schema\n}\n\nresponse = requests.post(url, json=data)\nresponse.raise_for_status()\nresult = response.json()\nprint(result)"
+  }
+]

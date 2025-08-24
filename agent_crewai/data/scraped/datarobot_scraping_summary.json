@@ -1,0 +1,13 @@
+{
+  "total_pages": 84,
+  "successful_pages": 84,
+  "failed_urls": 9,
+  "page_types": {
+    "api_reference": 48,
+    "guide": 1,
+    "tutorial": 1,
+    "documentation": 34
+  },
+  "total_code_examples": 1833,
+  "scraped_at": 1755969528.678175
+}

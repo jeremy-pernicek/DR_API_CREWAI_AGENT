@@ -1,0 +1,164 @@
+[
+  {
+    "id": "project_create",
+    "title": "Create DataRobot Project",
+    "content": "To create a DataRobot project, use dr.Project.start(dataset_path, target='target_column'). This method uploads your dataset and creates a new project for machine learning modeling.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/project-create",
+    "metadata": {}
+  },
+  {
+    "id": "autopilot_start",
+    "title": "Start Autopilot",
+    "content": "After creating a project, start Autopilot with project.set_target() and project.wait_for_autopilot(). Autopilot automatically builds and evaluates multiple machine learning models.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/autopilot",
+    "metadata": {}
+  },
+  {
+    "id": "timeseries_example",
+    "title": "Time Series Project Example",
+    "content": "For time series modeling, set datetime_partition_column and feature derivation windows. Example: project.set_target(target='sales', partition_settings={'datetime_partition_column': 'date', 'forecast_window_start': 1, 'forecast_window_end': 7})",
+    "type": "example",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/timeseries-example",
+    "metadata": {}
+  },
+  {
+    "id": "deployment_create",
+    "title": "Create Deployment",
+    "content": "Deploy a model using dr.Deployment.create_from_learning_model(model_id, label='My Deployment'). This creates a prediction endpoint for your trained model.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/deployment-create",
+    "metadata": {}
+  },
+  {
+    "id": "batch_predictions",
+    "title": "Make Batch Predictions",
+    "content": "Use deployment.predict_batch(dataset_path) to make predictions on a batch of data. For time series, include timeseries_settings with forecast_point parameter.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/batch-predictions",
+    "metadata": {}
+  },
+  {
+    "id": "project_create",
+    "title": "Create DataRobot Project",
+    "content": "To create a DataRobot project, use dr.Project.start(dataset_path, target='target_column'). This method uploads your dataset and creates a new project for machine learning modeling.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/project-create",
+    "metadata": {}
+  },
+  {
+    "id": "autopilot_start",
+    "title": "Start Autopilot",
+    "content": "After creating a project, start Autopilot with project.set_target() and project.wait_for_autopilot(). Autopilot automatically builds and evaluates multiple machine learning models.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/autopilot",
+    "metadata": {}
+  },
+  {
+    "id": "timeseries_example",
+    "title": "Time Series Project Example",
+    "content": "For time series modeling, set datetime_partition_column and feature derivation windows. Example: project.set_target(target='sales', partition_settings={'datetime_partition_column': 'date', 'forecast_window_start': 1, 'forecast_window_end': 7})",
+    "type": "example",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/timeseries-example",
+    "metadata": {}
+  },
+  {
+    "id": "deployment_create",
+    "title": "Create Deployment",
+    "content": "Deploy a model using dr.Deployment.create_from_learning_model(model_id, label='My Deployment'). This creates a prediction endpoint for your trained model.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/deployment-create",
+    "metadata": {}
+  },
+  {
+    "id": "batch_predictions",
+    "title": "Make Batch Predictions",
+    "content": "Use deployment.predict_batch(dataset_path) to make predictions on a batch of data. For time series, include timeseries_settings with forecast_point parameter.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/batch-predictions",
+    "metadata": {}
+  },
+  {
+    "id": "project_create",
+    "title": "Create DataRobot Project",
+    "content": "To create a DataRobot project, use dr.Project.start(dataset_path, target='target_column'). This method uploads your dataset and creates a new project for machine learning modeling.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/project-create",
+    "metadata": {}
+  },
+  {
+    "id": "autopilot_start",
+    "title": "Start Autopilot",
+    "content": "After creating a project, start Autopilot with project.set_target() and project.wait_for_autopilot(). Autopilot automatically builds and evaluates multiple machine learning models.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/autopilot",
+    "metadata": {}
+  },
+  {
+    "id": "timeseries_example",
+    "title": "Time Series Project Example",
+    "content": "For time series modeling, set datetime_partition_column and feature derivation windows. Example: project.set_target(target='sales', partition_settings={'datetime_partition_column': 'date', 'forecast_window_start': 1, 'forecast_window_end': 7})",
+    "type": "example",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/timeseries-example",
+    "metadata": {}
+  },
+  {
+    "id": "deployment_create",
+    "title": "Create Deployment",
+    "content": "Deploy a model using dr.Deployment.create_from_learning_model(model_id, label='My Deployment'). This creates a prediction endpoint for your trained model.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/deployment-create",
+    "metadata": {}
+  },
+  {
+    "id": "batch_predictions",
+    "title": "Make Batch Predictions",
+    "content": "Use deployment.predict_batch(dataset_path) to make predictions on a batch of data. For time series, include timeseries_settings with forecast_point parameter.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/batch-predictions",
+    "metadata": {}
+  },
+  {
+    "id": "timeseries_setup",
+    "title": "Time Series Configuration",
+    "content": "For time series projects, configure datetime partitioning and feature derivation windows. \n            Set forecast_window_start and forecast_window_end for prediction horizon. \n            Use feature_derivation_window_start and feature_derivation_window_end for lookback period.\n            Example: partition_settings={'datetime_partition_column': 'date', 'forecast_window_start': 1, 'forecast_window_end': 7}",
+    "type": "configuration",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/timeseries-config",
+    "metadata": {}
+  },
+  {
+    "id": "model_deployment",
+    "title": "Model Deployment Best Practices",
+    "content": "Deploy models using dr.Deployment.create_from_learning_model(). \n            Set appropriate prediction_environment and importance_only_features. \n            For time series, configure timeseries_settings with forecast_point.\n            Monitor deployment with prediction_explanations_enabled=True for debugging.",
+    "type": "best_practice",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/deployment-best-practices",
+    "metadata": {}
+  },
+  {
+    "id": "batch_scoring",
+    "title": "Batch Prediction Scoring",
+    "content": "Use BatchPredictionJob.score() for large datasets. \n            Configure intake_settings for data source and output_settings for results.\n            For time series: set timeseries_settings with forecast_point and actuals_dataset.\n            Monitor job with job.wait_for_completion() and handle failures gracefully.",
+    "type": "method",
+    "source": "python_sdk",
+    "url": "https://docs.datarobot.com/batch-predictions-guide",
+    "metadata": {}
+  }
+]

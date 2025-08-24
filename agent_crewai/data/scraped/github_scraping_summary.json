@@ -1,0 +1,17 @@
+{
+  "total_repositories": 1,
+  "total_files": 35,
+  "repositories_scraped": [
+    "datarobot-community/examples-for-data-scientists"
+  ],
+  "files_by_type": {
+    "markdown": 8,
+    "notebook": 14,
+    "text": 1,
+    "python": 12
+  },
+  "files_by_repo": {
+    "examples-for-data-scientists": 35
+  },
+  "scraped_at": 1755969949.3338811
+}

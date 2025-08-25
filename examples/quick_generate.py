@@ -65,12 +65,9 @@ def main():
             print(f"📋 COMPLETE GENERATED CODE (Copy & Paste Ready)")
             print(f"{'='*80}")
             
-            lines = best_sol['code'].split('\n')
-            for i, line in enumerate(lines, 1):
-                print(f"{i:3d} | {line}")
+            # Print code without line numbers for easy copy-paste
+            print(best_sol['code'])
             
-            print(f"{'='*80}")
-            print(f"📏 Total lines: {len(lines)}")
             print(f"{'='*80}")
             
             print(f"\n🎉 SUCCESS!")

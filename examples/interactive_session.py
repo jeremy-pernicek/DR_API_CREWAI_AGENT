@@ -40,12 +40,9 @@ def print_full_code(code, title="Generated Code"):
     print(f"📋 {title.upper()}")
     print(f"{'='*80}")
     
-    lines = code.split('\n')
-    for i, line in enumerate(lines, 1):
-        print(f"{i:3d} | {line}")
+    # Print code without line numbers for easy copy-paste
+    print(code)
     
-    print(f"{'='*80}")
-    print(f"📏 Total lines: {len(lines)}")
     print(f"{'='*80}\n")
 
 def save_code(code, filename):
